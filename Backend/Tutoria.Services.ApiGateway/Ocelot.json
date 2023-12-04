@@ -1,0 +1,957 @@
+{
+
+    "Routes": [
+
+        // ==================================
+        // Servicio Security Authenticacion 
+        // ==================================
+        {
+            "UpstreamPathTemplate": "/gateway/User", //path del apigateway
+            "UpstreamHttpMethod": [ "Get" ], //Verbos que apuntara
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [ //Hacia donde va
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User" //¿A quien quiero apuntar          
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/login",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/login"
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/register",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/register"
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/reset-password",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/reset-password"
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/send-reset-email/{email}",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/send-reset-email/{email}"
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/send-reserva-notificacion-email/{email}",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/send-reserva-notificacion-email/{email}"
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/send-programacion-obligatoria-notificacion-email/{email}",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/send-programacion-obligatoria-notificacion-email/{email}"
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/User/send-confirmation-reserva-notificacion-email/{email}",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7115
+                }
+            ],
+            "DownstreamPathTemplate": "/api/User/send-confirmation-reserva-notificacion-email/{email}"
+        },
+        ////==================================
+        ////Servicio Configuracion Academica
+        ////==================================
+        ////Administrador
+        {
+            "UpstreamPathTemplate": "/gateway/api/Administrador",
+            "UpstreamHttpMethod": [ "Post", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Administrador",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+            //"RouteClaimsRequirement": { //Authorizacion
+            //    "role": "Admin"
+            //}
+
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Administrador/{id}",
+            "UpstreamHttpMethod": [ "Get", "Delete" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Administrador/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+            //"RouteClaimsRequirement": { //Authorizacion
+            //    "role": "admin"
+            //}
+
+
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Administrador/Desactivar/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Administrador/Desactivar/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Administrador/Activar/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Administrador/Activar/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        // Tutor
+        {
+            "UpstreamPathTemplate": "/gateway/api/Tutor",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Tutor",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Tutor/{id}",
+            "UpstreamHttpMethod": [ "Get", "Delete" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Tutor/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+
+        },
+
+        //Tutorado
+        {
+            "UpstreamPathTemplate": "/gateway/api/Tutorado",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Tutorado",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Tutorado/{id}",
+            "UpstreamHttpMethod": [ "Get", "Delete" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Tutorado/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        // Semestre
+        {
+            "UpstreamPathTemplate": "/gateway/api/Semestre",
+            "UpstreamHttpMethod": [ "Post", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Semestre",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Semestre/{id}",
+            "UpstreamHttpMethod": [ "Delete","Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Semestre/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/Semestre/Semestre-Activo",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Semestre/Semestre-Activo",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/Semestre/Desactivar/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Semestre/Desactivar/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        //Carga Tutoria
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria",
+            "UpstreamHttpMethod": [ "Post", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/Lista-Activos",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/Lista-Activos",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/CodeTutoradosByCodeTutor/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/CodeTutoradosByCodeTutor/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/CodeTutoradoByIdCarga/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/CodeTutoradoByIdCarga/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/{id}",
+            "UpstreamHttpMethod": [ "Get", "Delete" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/CodeTutorByCodeTutorado/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/CodeTutorByCodeTutorado/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/IdCargaByCodeTutorado/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/IdCargaByCodeTutorado/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/Desactivar/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/Desactivar/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/CargaTutoria/DesactivarCargas",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7224
+                }
+            ],
+            "DownstreamPathTemplate": "/api/CargaTutoria/DesactivarCargas",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+
+        },
+        //===============================================
+        //// Servicio Sesion Tutoria Academica
+        //===============================================
+
+        //Tutor horario disponible
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/TutorHorarioDisponible",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/HorarioByCodeTutorFechaHora",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/HorarioByCodeTutorFechaHora",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible/ListaHorariosByCodeTutor/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/TutorHorarioDisponible/ListaHorariosByCodeTutor/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible/{id}",
+            "UpstreamHttpMethod": [ "Delete", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/TutorHorarioDisponible/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible/DesactivarHorarios",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/TutorHorarioDisponible/DesactivarHorarios",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        //Programacion de reserva obligatoria
+        {
+            "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/ProgramacionReservaObligatoria",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/{id}",
+            "UpstreamHttpMethod": [ "Delete", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/ProgramacionReservaObligatoria/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/ListaActivos",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/ProgramacionReservaObligatoria/ListaActivos",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/ProgramacionActivoByCodeTutor/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/ProgramacionReservaObligatoria/ProgramacionActivoByCodeTutor/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/DesactivarByCodeTutor/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/ProgramacionReservaObligatoria/DesactivarByCodeTutor/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        //detalles de programacion de reserva obligatoria
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleProgramacion",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/{id}",
+            "UpstreamHttpMethod": [ "Delete" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleProgramacion/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/DetalleProgramacionByIdProgramacion/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleProgramacion/DetalleProgramacionByIdProgramacion/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/DesactivarDetalleProgramacionByIdProgramacion/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleProgramacion/DesactivarDetalleProgramacionByIdProgramacion/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/DetallesProgramacionByIdProgramacion/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleProgramacion/DetallesProgramacionByIdProgramacion/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        // Reservas  DetallesProgramacionByIdProgramacion
+
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/DesactivarReservaVoluntarioByIdCarga/{id}",
+            "UpstreamHttpMethod": [ "Put"],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/DesactivarReservaVoluntarioByIdCarga/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/ReservaByIdHorarioHoraFecha",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/ReservaByIdHorarioHoraFecha",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/ReservasByProgramacion/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/ReservasByIdProgramacion/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/reservaVoluntarioActivo",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/reservaVoluntarioActivo",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/{id}",
+            "UpstreamHttpMethod": [ "Delete", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/ReservasPorIntervaloFechaYTipoVoluntario",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/ReservasPorIntervaloFechaYTipoVoluntario",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/ConfirmarByIdReserva/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/ConfirmarByIdReserva/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/Reserva/CancelarConfirmacionByIdReserva/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/Reserva/CancelarConfirmacionByIdReserva/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        //Sesion de tutoria
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/SesionTutoria",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/SesionTutoria",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/api/SesionTutoria/SesionByIdReserva/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/SesionTutoria/SesionByIdReserva/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/SesionTutoria/{id}",
+            "UpstreamHttpMethod": [ "Get", "Delete" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/SesionTutoria/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+
+
+
+
+        // Detalle de sesion de tutoria
+
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleTutoria",
+            "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleTutoria",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleTutoria/{id}",
+            "UpstreamHttpMethod": [ "Delete", "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleTutoria/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        },
+
+        {
+            "UpstreamPathTemplate": "/gateway/api/DetalleTutoria/DetallesByIdSesion/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7158
+                }
+            ],
+            "DownstreamPathTemplate": "/api/DetalleTutoria/DetallesByIdSesion/{id}",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer"
+            }
+        }
+
+
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:5087"
+    }
+
+}
