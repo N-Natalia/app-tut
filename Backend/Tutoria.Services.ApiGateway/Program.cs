@@ -18,7 +18,7 @@ builder.Services.AddCors(option =>
 
 
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
+    .AddJsonFile("Ocelot.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
 
 builder.Services.AddOcelot(builder.Configuration);

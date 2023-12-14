@@ -8,10 +8,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User", //path del apigateway
             "UpstreamHttpMethod": [ "Get" ], //Verbos que apuntara
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [ //Hacia donde va
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -20,10 +20,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/login",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -32,10 +32,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/register",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -44,10 +44,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/reset-password",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -56,10 +56,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/send-reset-email/{email}",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -68,10 +68,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/send-reserva-notificacion-email/{email}",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -80,10 +80,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/send-programacion-obligatoria-notificacion-email/{email}",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -92,10 +92,10 @@
         {
             "UpstreamPathTemplate": "/gateway/User/send-confirmation-reserva-notificacion-email/{email}",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-security",
                     "Port": 7115
                 }
             ],
@@ -108,10 +108,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Administrador",
             "UpstreamHttpMethod": [ "Post", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -128,10 +128,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Administrador/{id}",
             "UpstreamHttpMethod": [ "Get", "Delete" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -149,10 +149,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Administrador/Desactivar/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -165,10 +165,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Administrador/Activar/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -181,10 +181,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Tutor",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -198,10 +198,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Tutor/{id}",
             "UpstreamHttpMethod": [ "Get", "Delete" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -216,10 +216,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Tutorado",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -232,10 +232,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Tutorado/{id}",
             "UpstreamHttpMethod": [ "Get", "Delete" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -249,10 +249,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Semestre",
             "UpstreamHttpMethod": [ "Post", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -266,10 +266,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Semestre/{id}",
             "UpstreamHttpMethod": [ "Delete","Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -281,10 +281,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Semestre/Semestre-Activo",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -296,10 +296,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Semestre/Desactivar/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -312,10 +312,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria",
             "UpstreamHttpMethod": [ "Post", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -329,10 +329,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/Lista-Activos",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -344,10 +344,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/CodeTutoradosByCodeTutor/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -359,10 +359,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/CodeTutoradoByIdCarga/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -375,10 +375,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/{id}",
             "UpstreamHttpMethod": [ "Get", "Delete" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -393,10 +393,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/CodeTutorByCodeTutorado/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -408,10 +408,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/IdCargaByCodeTutorado/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -425,10 +425,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/Desactivar/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -441,10 +441,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/CargaTutoria/DesactivarCargas",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-configuration",
                     "Port": 7224
                 }
             ],
@@ -463,10 +463,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -478,10 +478,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/HorarioByCodeTutorFechaHora",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -494,10 +494,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible/ListaHorariosByCodeTutor/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -510,10 +510,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible/{id}",
             "UpstreamHttpMethod": [ "Delete", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -527,10 +527,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/TutorHorarioDisponible/DesactivarHorarios",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -543,10 +543,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -558,10 +558,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/{id}",
             "UpstreamHttpMethod": [ "Delete", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -574,10 +574,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/ListaActivos",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -590,10 +590,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/ProgramacionActivoByCodeTutor/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -606,10 +606,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/ProgramacionReservaObligatoria/DesactivarByCodeTutor/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -622,10 +622,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -637,10 +637,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/{id}",
             "UpstreamHttpMethod": [ "Delete" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -655,10 +655,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/DetalleProgramacionByIdProgramacion/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -671,10 +671,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/DesactivarDetalleProgramacionByIdProgramacion/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -686,10 +686,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleProgramacion/DetallesProgramacionByIdProgramacion/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -706,10 +706,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -721,10 +721,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/DesactivarReservaVoluntarioByIdCarga/{id}",
             "UpstreamHttpMethod": [ "Put"],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -737,10 +737,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/ReservaByIdHorarioHoraFecha",
             "UpstreamHttpMethod": [ "Post" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -753,10 +753,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/ReservasByProgramacion/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -768,10 +768,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/reservaVoluntarioActivo",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -783,10 +783,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/{id}",
             "UpstreamHttpMethod": [ "Delete", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -800,10 +800,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/ReservasPorIntervaloFechaYTipoVoluntario",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -817,10 +817,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/ConfirmarByIdReserva/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -832,10 +832,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/Reserva/CancelarConfirmacionByIdReserva/{id}",
             "UpstreamHttpMethod": [ "Put" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -849,10 +849,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/SesionTutoria",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -864,10 +864,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/SesionTutoria/SesionByIdReserva/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -880,10 +880,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/SesionTutoria/{id}",
             "UpstreamHttpMethod": [ "Get", "Delete" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -903,10 +903,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleTutoria",
             "UpstreamHttpMethod": [ "Post", "Put", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -919,10 +919,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleTutoria/{id}",
             "UpstreamHttpMethod": [ "Delete", "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -935,10 +935,10 @@
         {
             "UpstreamPathTemplate": "/gateway/api/DetalleTutoria/DetallesByIdSesion/{id}",
             "UpstreamHttpMethod": [ "Get" ],
-            "DownstreamScheme": "https",
+            "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
+                    "Host": "service-service-sessions-academic",
                     "Port": 7158
                 }
             ],
@@ -951,7 +951,7 @@
 
     ],
     "GlobalConfiguration": {
-        "BaseUrl": "https://localhost:5087"
+        "BaseUrl": "http://localhost:5087"
     }
 
 }

@@ -1,0 +1,15 @@
+# Etapa de construcción
+FROM node:18.13.0 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Etapa de producción
+FROM nginx:1.21.6-alpine AS prod
+COPY --from=build /app/dist/tutoria-app /usr/share/nginx/html
+
+
+#docker build -t angular-app .construir imagen
+#docker run -p 8080:80 angular-app 
